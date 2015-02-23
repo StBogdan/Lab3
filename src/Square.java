@@ -5,21 +5,25 @@ import java.util.Random;
 public class Square extends Shape {
 		int size =75;
 		
-		//Constructor that uses default radius of 30
 		//Also sets a random color
 		public Square(int x,int y){
 			super(x,y);
 		}
 		
-		//Size-specificating constructor
+		//Size-specifying constructor
 		public Square(int x,int y,int size){
 			super(x, y);
 			this.size= size;
 		}
 		
-		//Checks if a point in within the circle
+		//Checks if a point in within the square
 		public boolean contains(int x,int y){
-			return x>=this.x && x<=this.x+this.size && y>=this.y && y<=this.y+this.size; 
+			//The x,y of the drawing is different between Linux and Windows
+			//Tested on windows
+			return x>=(this.x)  && x<=(this.x + size) && y>=(this.y - size/2) && y<=(this.y +size/2);
+			
+			//This works on Linux
+			// return x>=this.x && x<=this.x+this.size && y>=this.y && y<=this.y+this.size; 
 		}
 		
 		//Getters 

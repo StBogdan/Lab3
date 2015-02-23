@@ -11,7 +11,7 @@ public class Circle extends Shape {
 			super(x,y);
 		}
 		
-		//Radius-specificating constructor
+		//Radius-specifying constructor
 		public Circle(int x,int y,int radius){
 			super(x, y);
 			this.rad= radius;
@@ -19,7 +19,11 @@ public class Circle extends Shape {
 		
 		//Checks if a point in within the circle
 		public boolean contains(int x,int y){
-			return Math.sqrt((this.x+ this.rad -x)*(this.x+ this.rad -x) + (this.y+ this.rad-y)*(this.y+ this.rad-y)) < this.rad;
+			
+			//Windows version
+			return Math.sqrt((this.x+ this.rad -x)*(this.x+ this.rad -x) + (this.y-y)*(this.y-y)) < this.rad;
+			//Linux version
+			//return Math.sqrt((this.x+ this.rad -x)*(this.x+ this.rad -x) + (this.y+ this.rad-y)*(this.y+ this.rad-y)) < this.rad;
 		}
 		
 		//Getters 

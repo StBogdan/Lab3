@@ -47,6 +47,7 @@ class ShapeSelect extends JFrame{
 		JButton dec = new JButton("Decrease");
 		JButton reset = new JButton("Reset");
 		
+		//Make the buttons do stuff
 		inc.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				numberCirc +=1;
@@ -89,8 +90,10 @@ class ShapeSelect extends JFrame{
 	public void makeRounds(ArrayList<Shape> shapes){
 		Graphics g = this.getGraphics();
 		for(Shape drawThis : shapes){
-			//Color and coordonates are obtained using getters
+			//Colour and coordinates are obtained using getters
 			g.setColor(drawThis.getColor());
+			
+			//Check if it's a circle
 			if (drawThis instanceof Circle) g.fillOval(drawThis.getX(), drawThis.getY(), ((Circle) drawThis).getDiam(), ((Circle) drawThis).getDiam());
 			else g.fillRect(drawThis.getX(), drawThis.getY(), ((Square) drawThis).getSize(), ((Square) drawThis).getSize());
 		}
@@ -103,6 +106,8 @@ class ShapeSelect extends JFrame{
 	 */
 	public void randomShapes(int number){
 		shapes.clear();
+		
+		//Creates an equal amount of Squares and Circles
 		Random RandCoord = new Random();
 		for(int i=0;i<number;i++)
 			{
