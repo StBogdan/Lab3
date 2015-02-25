@@ -2,12 +2,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
-public class Shape {
+public abstract class Shape {
 		int x,y;
 		Color color;
 		
 		//Gets the position
-		//And a random color
+		//And a random colour
 		public Shape(int x,int y){
 			this.x=x;
 			this.y=y;
@@ -16,7 +16,7 @@ public class Shape {
 		}
 		
 		//Checks if a point in within the circle
-		public boolean contains(int x,int y) { return x== this.x && y == this.y;};
+		public abstract boolean contains(int x,int y);
 		
 		//Getters 
 		public int getX(){return this.x;}

@@ -31,7 +31,8 @@ class Die extends JFrame{
 		//And repaint the frame
 		inc.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				if (value<6) value+=1;
+				Random RNG = new Random();
+				value =1+ RNG.nextInt(6);
 				repaint();
 			}
 		});

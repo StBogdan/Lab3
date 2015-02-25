@@ -1,13 +1,14 @@
 import java.awt.*;
 
 import javax.swing.*;
+
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Random;
 
 
 @SuppressWarnings("serial")
-class ShapeSelect extends JFrame{
+public class ShapeSelect extends JFrame{
 	int numberCirc =1;
 	ArrayList<Shape> shapes= new ArrayList<Shape>();
 	
